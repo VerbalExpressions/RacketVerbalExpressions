@@ -93,7 +93,8 @@ Here's a couple of simple examples to give an idea of how VerbalExpressions work
 
 Use (pregexp (regex)) to produce a PERL style syntax object [#prx*string*]
    
-
+## Other implementations  
+You can view all implementations on [VerbalExpressions.github.io](http://VerbalExpressions.github.io)
 
 
 
