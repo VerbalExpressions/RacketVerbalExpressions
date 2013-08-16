@@ -4,7 +4,7 @@
 
 (test-case
  "Abstract functions for extending the Regex"
- (check-equal? (begin (reset)
+ (check-equal? (beginCapture
                       (next-pre "^")
                       (next-src ";;")
                       (next-suf "$")
@@ -12,7 +12,7 @@
                       (endCapture))
                (string-append "^"";;""$""i"))
  
- (check-equal? (begin (reset)
+ (check-equal? (beginCapture
                       (next-pre "^")
                       (next-src ";;")
                       (next-suf "$")(next-suf "$")
@@ -20,7 +20,7 @@
                       (endCapture))
                (string-append "^"";;""$""i"))
  
- (check-equal? (begin (reset)
+ (check-equal? (beginCapture
                       (next-pre "^")
                       (next-src ";;")
                       (next-suf "$")(next-suf "k")
@@ -30,7 +30,7 @@
 
 (test-case
  "Tests for: (anything)(something)(endOfLine)"
-   (check-equal? (begin (reset)
+   (check-equal? (beginCapture
                        (startOfLine)
                        (anything)(something)
                        (endOfLine)
@@ -41,7 +41,7 @@
 
 (test-case
  "Tests for: (annythingBut)"
-  (check-equal? (begin(reset)
+  (check-equal? (beginCapture
                       (anythingBut "abc")
                       (endCapture))
                 (string-append "(?:[^"
@@ -50,7 +50,7 @@
 
 (test-case
  "Test for (somethingBut ...)"
-  (check-equal? (begin(reset)
+  (check-equal? (beginCapture
                       (somethingBut "abc")
                       (endCapture))
                 (string-append "(?:[^"
@@ -59,7 +59,7 @@
 
 (test-case
  "Tests for: (lineBreak)(br)(tab)(word)"
-  (check-equal? (begin (reset)
+  (check-equal? (beginCapture
                        (lineBreak)(br)
                        (tab)(word)
                        (endCapture))
@@ -69,7 +69,7 @@
 
 (test-case
  "Test for (anyOf...)"
-  (check-equal? (begin (reset)
+  (check-equal? (beginCapture
                        (anyOf "abc")
                        (endCapture))
                 (string-append "["
