@@ -36,7 +36,7 @@ Here's a couple of simple examples to give an idea of how VerbalExpressions work
 	#lang racket
 	(require "verbal-expressions.rkt")
 	;; Create an example of how to test for correctly formed URLs
-	;; Note that idomatic Verbal Expressions uses camelCase -
+	;; Note that idiomatic Verbal Expressions uses camelCase -
 	;; or at least that's what I have decided.
 	(define TESTER 
 		(beginCapture
